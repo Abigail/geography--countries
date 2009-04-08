@@ -53,5 +53,5 @@ eval {my $c = country 1, "foobah"};
 printf "%sok %d\n", $@ =~ /^Illegal second argument/
                     ? "" : "not ", ++ $test;
 
-printf "%sok %d\n", "1.2" eq $Geography::Countries::VERSION
+printf "%sok %d\n", defined $Geography::Countries::VERSION
                     ? "" : "not ", ++ $test;
