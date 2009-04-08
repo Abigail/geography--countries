@@ -1,9 +1,13 @@
 package Geography::Countries;
 
 #
-# $Id: Countries.pm,v 1.1 1999/09/15 07:27:22 abigail Exp abigail $
+# $Id: Countries.pm,v 1.2 2000/09/05 18:22:01 abigail Exp abigail $
 #
 # $Log: Countries.pm,v $
+# Revision 1.2  2000/09/05 18:22:01  abigail
+# Changed typo in "Federal Republic of Germany" (Dan Allen)
+# Changed layout of test.pl
+#
 # Revision 1.1  1999/09/15 07:27:22  abigail
 # Initial revision
 #
@@ -28,7 +32,7 @@ use vars qw /@ISA @EXPORT @EXPORT_OK %EXPORT_TAGS $VERSION/;
                 FLAGS   => [qw /CNT_F_REGULAR CNT_F_OLD
                                 CNT_F_REGION  CNT_F_ANY/],);
 
-($VERSION)   = '$Revision: 1.1 $' =~ /([\d.]+)/;
+($VERSION)   = '$Revision: 1.2 $' =~ /([\d.]+)/;
 
 
 use constant CNT_I_CODE2   =>    0;
@@ -266,6 +270,10 @@ but I<United States> will.
 =head1 HISTORY
 
     $Log: Countries.pm,v $
+    Revision 1.2  2000/09/05 18:22:01  abigail
+    Changed typo in "Federal Republic of Germany" (Dan Allen)
+    Changed layout of test.pl
+
     Revision 1.1  1999/09/15 07:27:22  abigail
     Initial revision
 
@@ -535,7 +543,7 @@ ZW ZWE 716 Zimbabwe
        890 Socialist Federal Republic of Yugoslavia
        200 Czechoslovakia
        278 German Democratic Republic
-       280 Federal Rebuplic of Germany
+       280 Federal Republic of Germany
        582 Pacific Islands (Trust Territory)
        720 Democratic Yemen
        886 Yemen
