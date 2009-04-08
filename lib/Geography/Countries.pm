@@ -1,38 +1,26 @@
 package Geography::Countries;
 
-#
-# $Id: Countries.pm,v 1.2 2000/09/05 18:22:01 abigail Exp abigail $
-#
-# $Log: Countries.pm,v $
-# Revision 1.2  2000/09/05 18:22:01  abigail
-# Changed typo in "Federal Republic of Germany" (Dan Allen)
-# Changed layout of test.pl
-#
-# Revision 1.1  1999/09/15 07:27:22  abigail
-# Initial revision
-#
-#
-
-BEGIN {require 5.005}
+use 5.006;
 
 use strict;
-use Exporter;
+use warnings;
+no  warnings 'syntax';
 
-use vars qw /@ISA @EXPORT @EXPORT_OK %EXPORT_TAGS $VERSION/;
+use Exporter ();
 
-@ISA         = qw /Exporter/;
-@EXPORT      = qw /country/;
-@EXPORT_OK   = qw /code2         code3       numcode       countries
-                   CNT_I_CODE2   CNT_I_CODE3 CNT_I_NUMCODE CNT_I_COUNTRY
-                   CNT_I_FLAG
-                   CNT_F_REGULAR CNT_F_OLD   CNT_F_REGION  CNT_F_ANY/;
-%EXPORT_TAGS = (LISTS   => [qw /code2 code3   numcode     countries/],
-                INDICES => [qw /CNT_I_CODE2   CNT_I_CODE3 CNT_I_NUMCODE
-                                CNT_I_COUNTRY CNT_I_FLAG/],
-                FLAGS   => [qw /CNT_F_REGULAR CNT_F_OLD
-                                CNT_F_REGION  CNT_F_ANY/],);
+our @ISA         = qw /Exporter/;
+our @EXPORT      = qw /country/;
+our @EXPORT_OK   = qw /code2         code3       numcode       countries
+                       CNT_I_CODE2   CNT_I_CODE3 CNT_I_NUMCODE CNT_I_COUNTRY
+                       CNT_I_FLAG
+                       CNT_F_REGULAR CNT_F_OLD   CNT_F_REGION  CNT_F_ANY/;
+our %EXPORT_TAGS = (LISTS   => [qw /code2 code3   numcode     countries/],
+                    INDICES => [qw /CNT_I_CODE2   CNT_I_CODE3 CNT_I_NUMCODE
+                                    CNT_I_COUNTRY CNT_I_FLAG/],
+                    FLAGS   => [qw /CNT_F_REGULAR CNT_F_OLD
+                                    CNT_F_REGION  CNT_F_ANY/],);
 
-($VERSION)   = '$Revision: 1.2 $' =~ /([\d.]+)/;
+our $VERSION     = '2009040801';
 
 
 use constant CNT_I_CODE2   =>    0;
@@ -128,14 +116,13 @@ sub country ($;$) {
 
 }
 
-
-<<'=cut'
+1;
 
 =pod
 
 =head1 NAME
 
-Geography::Countries -- 2-letter, 3-letter, and numerical codes for countries.
+Geography::Countries - 2-letter, 3-letter, and numerical codes for countries.
 
 =head1 SYNOPSIS
 
@@ -267,28 +254,36 @@ Except for case and the amount of white space, the exact name as it
 appears on the list has to be given. I<USA> will not return anything,
 but I<United States> will.
 
-=head1 HISTORY
-
-    $Log: Countries.pm,v $
-    Revision 1.2  2000/09/05 18:22:01  abigail
-    Changed typo in "Federal Republic of Germany" (Dan Allen)
-    Changed layout of test.pl
-
-    Revision 1.1  1999/09/15 07:27:22  abigail
-    Initial revision
-
-
+=head1 DEVELOPMENT
+    
+The current sources of this module are found on github,
+L<< git://github.com/Abigail/geography--countries.git >>.
+    
 =head1 AUTHOR
+    
+Abigail L<< mailto:geography-countries@abigail.be >>.
+    
+=head1 COPYRIGHT and LICENSE
+       
+Copyright (C) 1999, 2009 by Abigail
+    
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the "Software"),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
 
-This package was written by Abigail, I<abigail@delanet.com>.
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software.
 
-=head1 COPYRIGHT AND LICENSE
-
-This package is copyright 1999 by Abigail.
-
-This program is free and open software. You may use, copy, modify,
-distribute and sell this program (and any modified variants) in any way
-you wish, provided you do not restrict others to do the same.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT
+OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
 
 =cut
 
