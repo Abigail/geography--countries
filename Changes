@@ -1,5 +1,5 @@
 Version 2009040901
-- Force DATA encoding to be iso-8859-1 (davidhull)
+- Force DATA encoding to be iso-8859-1 (davidhull/RT #38005)
 ----
 Version 2009040801
 - Moved to git and github.
