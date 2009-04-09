@@ -20,7 +20,7 @@ our %EXPORT_TAGS = (LISTS   => [qw /code2 code3   numcode     countries/],
                     FLAGS   => [qw /CNT_F_REGULAR CNT_F_OLD
                                     CNT_F_REGION  CNT_F_ANY/],);
 
-our $VERSION     = '2009040801';
+our $VERSION     = '2009040901';
 
 
 use constant CNT_I_CODE2   =>    0;
@@ -46,47 +46,47 @@ sub norm ($) {
     $query;
 }
 
-INIT {
-    my $flag;
-    my %flags   = (
-        Regular => CNT_F_REGULAR,
-        Old     => CNT_F_OLD,
-        Region  => CNT_F_REGION,
-    );
-    while (<DATA>) {
-        chomp;
-        last if $_ eq '__END__';
-        s/#.*//;
-        next unless /\S/;
-        if (/^%%\s*(\S.*\S)\s*%%$/) {
-            $flag = $flags {$1} or
-                     die "Found illegal flag ``$1'' while parsing __DATA__\n";
-            next;
-        }
-        my $code2   = substr $_,  0, 2;  $code2   = undef if $code2   =~ /\s/;
-        my $code3   = substr $_,  3, 3;  $code3   = undef if $code3   =~ /\s/;
-        my $numcode = substr $_,  7, 3;  $numcode = undef if $numcode =~ /\s/;
-        my $country = substr $_, 11;
+binmode (DATA, ':encoding(iso-8859-1)');
 
-        push @code2     =>  $code2   if defined $code2;
-        push @code3     =>  $code3   if defined $code3;
-        push @numcode   =>  $numcode if defined $numcode;
-        push @countries =>  $country;
-
-        my $info    = [$code2, $code3, $numcode, $country, $flag];
-
-        $info {norm $code2}   =  $info if defined $code2  ;
-        $info {norm $code3}   =  $info if defined $code3  ;
-        $info {$numcode}      =  $info if defined $numcode;
-
-        $info {norm $country} =  $info;
+my $flag;
+my %flags   = (
+    Regular => CNT_F_REGULAR,
+    Old     => CNT_F_OLD,
+    Region  => CNT_F_REGION,
+);
+while (<DATA>) {
+    chomp;
+    last if $_ eq '__END__';
+    s/#.*//;
+    next unless /\S/;
+    if (/^%%\s*(\S.*\S)\s*%%$/) {
+        $flag = $flags {$1} or
+                 die "Found illegal flag ``$1'' while parsing __DATA__\n";
+        next;
     }
+    my $code2   = substr $_,  0, 2;  $code2   = undef if $code2   =~ /\s/;
+    my $code3   = substr $_,  3, 3;  $code3   = undef if $code3   =~ /\s/;
+    my $numcode = substr $_,  7, 3;  $numcode = undef if $numcode =~ /\s/;
+    my $country = substr $_, 11;
 
-    @code2     = sort @code2;
-    @code3     = sort @code3;
-    @numcode   = sort @numcode;
-    @countries = sort @countries;
+    push @code2     =>  $code2   if defined $code2;
+    push @code3     =>  $code3   if defined $code3;
+    push @numcode   =>  $numcode if defined $numcode;
+    push @countries =>  $country;
+
+    my $info    = [$code2, $code3, $numcode, $country, $flag];
+
+    $info {norm $code2}   =  $info if defined $code2  ;
+    $info {norm $code3}   =  $info if defined $code3  ;
+    $info {$numcode}      =  $info if defined $numcode;
+
+    $info {norm $country} =  $info;
 }
+
+@code2     = sort @code2;
+@code3     = sort @code3;
+@numcode   = sort @numcode;
+@countries = sort @countries;
 
 sub code2     {@code2}
 sub code3     {@code3}
