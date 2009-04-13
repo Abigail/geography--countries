@@ -20,7 +20,7 @@ our %EXPORT_TAGS = (LISTS   => [qw /code2 code3   numcode     countries/],
                     FLAGS   => [qw /CNT_F_REGULAR CNT_F_OLD
                                     CNT_F_REGION  CNT_F_ANY/],);
 
-our $VERSION     = '2009040901';
+our $VERSION     = '2009041301';
 
 
 use constant CNT_I_CODE2   =>    0;
@@ -46,7 +46,7 @@ sub norm ($) {
     $query;
 }
 
-binmode (DATA, ':encoding(iso-8859-1)');
+binmode (DATA, ':encoding(iso-8859-1)') if $] >= 5.008;
 
 my $flag;
 my %flags   = (
