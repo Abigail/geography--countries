@@ -17,10 +17,10 @@ my %args = (
 
 my %filter = (
     MIN_PERL_VERSION     => '6.48',
+    LICENSE              => '6.48',
     META_MERGE           => '6.46',
     AUTHOR               => '6.07',
     ABSTRACT_FROM        => '6.07',
-    LICENSE              => '6.07',
 );
 
 
