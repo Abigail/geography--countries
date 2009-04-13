@@ -1,3 +1,6 @@
+Version 2009041301
+- Make encoding of DATA Perl version dependent.
+----
 Version 2009040901
 - Force DATA encoding to be iso-8859-1 (davidhull/RT #38005)
 ----
