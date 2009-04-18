@@ -2,6 +2,7 @@ lib/Geography/Countries.pm
 MANIFEST
 Makefile.PL
 t/000_tests.t
+t/010_countries.t
 Changes
 README
 TODO

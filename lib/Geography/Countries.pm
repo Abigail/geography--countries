@@ -543,11 +543,6 @@ ZW ZWE 716 Zimbabwe
        720 Democratic Yemen
        886 Yemen
        230 Ethiopia
-       104 Burma
-       116 Democratic Kampuchea
-       180 Zaire
-       384 Ivory Coast
-       854 Upper Volta
 %% Region %%
        002 Africa
        014 Eastern Africa
@@ -578,3 +573,8 @@ ZW ZWE 716 Zimbabwe
        057 Micronesia
        061 Polynesia
 __END__
+       104 Burma
+       116 Democratic Kampuchea
+       180 Zaire
+       384 Ivory Coast
+       854 Upper Volta
