@@ -292,6 +292,7 @@ sub init_data {
     push @data => [ 'BM', 'BMU', '060', "Bermuda"];
     push @data => [ 'BT', 'BTN', '064', "Bhutan"];
     push @data => [ 'BO', 'BOL', '068', "Bolivia"];
+    push @data => [ 'BQ', 'BES', '535', "Bonaire, Saint Eustatius and Saba"];
     push @data => [ 'BA', 'BIH', '070', "Bosnia and Herzegovina"];
     push @data => [ 'BW', 'BWA', '072', "Botswana"];
     push @data => [ 'BV', 'BVT', '074', "Bouvet Island"];
@@ -323,6 +324,7 @@ sub init_data {
     push @data => [ 'CI', 'CIV', '384', "C\x{f4}te d'Ivoire"];
     push @data => [ 'HR', 'HRV', '191', "Croatia"];
     push @data => [ 'CU', 'CUB', '192', "Cuba"];
+    push @data => [ 'CW', 'CUW', '531', "Cura\x{e7}ao"];
     push @data => [ 'CY', 'CYP', '196', "Cyprus"];
     push @data => [ 'CZ', 'CZE', '203', "Czech Republic"];
     push @data => [ 'KP', 'PRK', '408',
@@ -422,7 +424,6 @@ sub init_data {
     push @data => [ 'NR', 'NRU', '520', "Nauru"];
     push @data => [ 'NP', 'NPL', '524', "Nepal"];
     push @data => [ 'NL', 'NLD', '528', "Netherlands"];
-    push @data => [ 'AN', 'ANT', '530', "Netherlands Antilles"];
     push @data => [ 'NC', 'NCL', '540', "New Caledonia"];
     push @data => [ 'NZ', 'NZL', '554', "New Zealand"];
     push @data => [ 'NI', 'NIC', '558', "Nicaragua"];
@@ -466,6 +467,7 @@ sub init_data {
     push @data => [ 'SC', 'SYC', '690', "Seychelles"];
     push @data => [ 'SL', 'SLE', '694', "Sierra Leone"];
     push @data => [ 'SG', 'SGP', '702', "Singapore"];
+    push @data => [ 'SX', 'SXM', '534', "Sint Maarten (Dutch part)"];
     push @data => [ 'SK', 'SVK', '703', "Slovakia"];
     push @data => [ 'SI', 'SVN', '705', "Slovenia"];
     push @data => [ 'SB', 'SLB', '090', "Solomon Islands"];
@@ -525,6 +527,7 @@ sub init_data {
                                                                  CNT_F_OLD];
     push @data => [undef, undef, '384', "Ivory Coast",           CNT_F_OLD];
     push @data => [undef, undef, '532', "Netherlands Antilles",  CNT_F_OLD];
+    push @data => [ 'AN', 'ANT', '530', "Netherlands Antilles",  CNT_F_OLD];
     push @data => [undef, undef, '582', "Pacific Islands (Trust Territory)",
                                                                  CNT_F_OLD];
     push @data => [undef, undef, '890',

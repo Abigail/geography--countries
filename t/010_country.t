@@ -740,10 +740,10 @@ is scalar country ("NL"),  "Netherlands", "'NL'";
 is scalar country ("NLD"), "Netherlands", "'NLD'";
 is scalar country ("528"), "Netherlands", "'528'";
 
-# Netherlands Antilles
-is scalar country ("AN"),  "Netherlands Antilles", "'AN'";
-is scalar country ("ANT"), "Netherlands Antilles", "'ANT'";
-is scalar country ("530"), "Netherlands Antilles", "'530'";
+# Curaçao
+is scalar country ("CW"),  "Cura\x{e7}ao", "'CW'";
+is scalar country ("CUW"), "Cura\x{e7}ao", "'CUW'";
+is scalar country ("531"), "Cura\x{e7}ao", "'531'";
 
 # Aruba
 is scalar country ("AW"),  "Aruba", "'AW'";

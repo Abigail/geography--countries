@@ -1171,13 +1171,13 @@ is_deeply [country ("NLD")],
 is_deeply [country ("528")],
           ["NL", "NLD", "528", "Netherlands", $FLAG], "'528'";
 
-# Netherlands Antilles
-is_deeply [country ("AN") ],
-          ["AN", "ANT", "530", "Netherlands Antilles", $FLAG], "'AN'";
-is_deeply [country ("ANT")],
-          ["AN", "ANT", "530", "Netherlands Antilles", $FLAG], "'ANT'";
-is_deeply [country ("530")],
-          ["AN", "ANT", "530", "Netherlands Antilles", $FLAG], "'530'";
+# Curaçao
+is_deeply [country ("CW") ],
+          ["CW", "CUW", "531", "Cura\x{e7}ao", $FLAG], "'CW'";
+is_deeply [country ("CUW")],
+          ["CW", "CUW", "531", "Cura\x{e7}ao", $FLAG], "'CUW'";
+is_deeply [country ("531")],
+          ["CW", "CUW", "531", "Cura\x{e7}ao", $FLAG], "'531'";
 
 # Aruba
 is_deeply [country ("AW") ],
