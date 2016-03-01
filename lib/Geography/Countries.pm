@@ -53,7 +53,7 @@ my %flags   = (
     Old     => CNT_F_OLD,
     Region  => CNT_F_REGION,
 );
-my %info = init_data;
+my %info = init_data(\@code2, \@code3, \@numcode, \@countries);
 
 @code2     = sort @code2;
 @code3     = sort @code3;
@@ -260,9 +260,11 @@ THE SOFTWARE.
 =cut
 
 sub init_data {
+    my ($code2, $code3, $numcode, $countries) = @_;
     my   @data;
 
     # "Regular" countries.
+    push @data => [ 'AX', 'ALA', '248', "\x{c5}land Islands"];
     push @data => [ 'AF', 'AFG', '004', "Afghanistan"];
     push @data => [ 'AL', 'ALB', '008', "Albania"];
     push @data => [ 'DZ', 'DZA', '012', "Algeria"];
@@ -270,7 +272,7 @@ sub init_data {
     push @data => [ 'AD', 'AND', '020', "Andorra"];
     push @data => [ 'AO', 'AGO', '024', "Angola"];
     push @data => [ 'AI', 'AIA', '660', "Anguilla"];
-    push @data => [ 'AQ', undef, undef, "Antarctica"];
+    push @data => [ 'AQ', 'ATA', '010', "Antarctica"];
     push @data => [ 'AG', 'ATG', '028', "Antigua and Barbuda"];
     push @data => [undef, undef, '896', "Areas not elsewhere specified"];
     push @data => [undef, undef, '898', "Areas not specified"];
@@ -291,11 +293,12 @@ sub init_data {
     push @data => [ 'BM', 'BMU', '060', "Bermuda"];
     push @data => [ 'BT', 'BTN', '064', "Bhutan"];
     push @data => [ 'BO', 'BOL', '068', "Bolivia"];
+    push @data => [ 'BQ', 'BES', '535', "Bonaire, Saint Eustatius and Saba"];
     push @data => [ 'BA', 'BIH', '070', "Bosnia and Herzegovina"];
     push @data => [ 'BW', 'BWA', '072', "Botswana"];
-    push @data => [ 'BV', undef, undef, "Bouvet Island"];
+    push @data => [ 'BV', 'BVT', '074', "Bouvet Island"];
     push @data => [ 'BR', 'BRA', '076', "Brazil"];
-    push @data => [ 'IO', undef, undef, "British Indian Ocean Territory"];
+    push @data => [ 'IO', 'IOT', '086', "British Indian Ocean Territory"];
     push @data => [ 'VG', 'VGB', '092', "British Virgin Islands"];
     push @data => [ 'BN', 'BRN', '096', "Brunei Darussalam"];
     push @data => [ 'BG', 'BGR', '100', "Bulgaria"];
@@ -311,8 +314,8 @@ sub init_data {
     push @data => [undef, undef, '830', "Channel Islands"];
     push @data => [ 'CL', 'CHL', '152', "Chile"];
     push @data => [ 'CN', 'CHN', '156', "China"];
-    push @data => [ 'CX', undef, undef, "Christmas Island"];
-    push @data => [ 'CC', undef, undef, "Cocos (keeling) Islands"];
+    push @data => [ 'CX', 'CXR', '162', "Christmas Island"];
+    push @data => [ 'CC', 'CCK', '166', "Cocos (keeling) Islands"];
     push @data => [ 'CO', 'COL', '170', "Colombia"];
     push @data => [ 'KM', 'COM', '174', "Comoros"];
     push @data => [ 'CG', 'COG', '178', "Congo"];
@@ -321,6 +324,7 @@ sub init_data {
     push @data => [ 'CI', 'CIV', '384', "C\x{f4}te d'Ivoire"];
     push @data => [ 'HR', 'HRV', '191', "Croatia"];
     push @data => [ 'CU', 'CUB', '192', "Cuba"];
+    push @data => [ 'CW', 'CUW', '531', "Cura\x{e7}ao"];
     push @data => [ 'CY', 'CYP', '196', "Cyprus"];
     push @data => [ 'CZ', 'CZE', '203', "Czech Republic"];
     push @data => [ 'KP', 'PRK', '408',
@@ -330,7 +334,7 @@ sub init_data {
     push @data => [ 'DJ', 'DJI', '262', "Djibouti"];
     push @data => [ 'DM', 'DMA', '212', "Dominica"];
     push @data => [ 'DO', 'DOM', '214', "Dominican Republic"];
-    push @data => [ 'TP', 'TMP', '626', "East Timor"];
+    push @data => [ 'TL', 'TLS', '626', "Timor-Leste"];
     push @data => [ 'EC', 'ECU', '218', "Ecuador"];
     push @data => [ 'EG', 'EGY', '818', "Egypt"];
     push @data => [ 'SV', 'SLV', '222', "El Salvador"];
@@ -348,7 +352,7 @@ sub init_data {
     push @data => [ 'FR', 'FRA', '250', "France"];
     push @data => [ 'GF', 'GUF', '254', "French Guiana"];
     push @data => [ 'PF', 'PYF', '258', "French Polynesia"];
-    push @data => [ 'TF', undef, undef, "French Southern Territories"];
+    push @data => [ 'TF', 'ATF', '260', "French Southern Territories"];
     push @data => [ 'GA', 'GAB', '266', "Gabon"];
     push @data => [ 'GM', 'GMB', '270', "Gambia"];
     push @data => [ 'GE', 'GEO', '268', "Georgia"];
@@ -361,11 +365,12 @@ sub init_data {
     push @data => [ 'GP', 'GLP', '312', "Guadeloupe"];
     push @data => [ 'GU', 'GUM', '316', "Guam"];
     push @data => [ 'GT', 'GTM', '320', "Guatemala"];
+    push @data => [ 'GG', 'GGY', '831', "Guersey"];
     push @data => [ 'GN', 'GIN', '324', "Guinea"];
     push @data => [ 'GW', 'GNB', '624', "Guinea-Bissau"];
     push @data => [ 'GY', 'GUY', '328', "Guyana"];
     push @data => [ 'HT', 'HTI', '332', "Haiti"];
-    push @data => [ 'HM', undef, undef, "Heard Island And Mcdonald Islands"];
+    push @data => [ 'HM', 'HMD', '334', "Heard Island And Mcdonald Islands"];
     push @data => [ 'VA', 'VAT', '336', "Holy See"];
     push @data => [ 'HN', 'HND', '340', "Honduras"];
     push @data => [ 'HK', 'HKG', '344',
@@ -382,6 +387,7 @@ sub init_data {
     push @data => [ 'IT', 'ITA', '380', "Italy"];
     push @data => [ 'JM', 'JAM', '388', "Jamaica"];
     push @data => [ 'JP', 'JPN', '392', "Japan"];
+    push @data => [ 'JE', 'JEY', '832', "Jersey"];
     push @data => [ 'JO', 'JOR', '400', "Jordan"];
     push @data => [ 'KZ', 'KAZ', '398', "Kazakhstan"];
     push @data => [ 'KE', 'KEN', '404', "Kenya"];
@@ -398,6 +404,7 @@ sub init_data {
     push @data => [ 'LT', 'LTU', '440', "Lithuania"];
     push @data => [ 'LU', 'LUX', '442', "Luxembourg"];
     push @data => [ 'MO', 'MAC', '446', "Macau"];
+    push @data => [ 'MK', undef, undef, "Macedonia"];
     push @data => [ 'MG', 'MDG', '450', "Madagascar"];
     push @data => [ 'MW', 'MWI', '454', "Malawi"];
     push @data => [ 'MY', 'MYS', '458', "Malaysia"];
@@ -408,19 +415,19 @@ sub init_data {
     push @data => [ 'MQ', 'MTQ', '474', "Martinique"];
     push @data => [ 'MR', 'MRT', '478', "Mauritania"];
     push @data => [ 'MU', 'MUS', '480', "Mauritius"];
-    push @data => [ 'YT', undef, undef, "Mayotte"];
+    push @data => [ 'YT', 'MYT', '175', "Mayotte"];
     push @data => [ 'MX', 'MEX', '484', "Mexico"];
     push @data => [ 'MC', 'MCO', '492', "Monaco"];
     push @data => [ 'MN', 'MNG', '496', "Mongolia"];
     push @data => [ 'MS', 'MSR', '500', "Montserrat"];
     push @data => [ 'MA', 'MAR', '504', "Morocco"];
     push @data => [ 'MZ', 'MOZ', '508', "Mozambique"];
+    push @data => [ 'ME', 'MNE', '499', "Montenegro"];
     push @data => [ 'MM', 'MMR', '104', "Myanmar"];
     push @data => [ 'NA', 'NAM', '516', "Namibia"];
     push @data => [ 'NR', 'NRU', '520', "Nauru"];
     push @data => [ 'NP', 'NPL', '524', "Nepal"];
     push @data => [ 'NL', 'NLD', '528', "Netherlands"];
-    push @data => [ 'AN', 'ANT', '530', "Netherlands Antilles"];
     push @data => [ 'NC', 'NCL', '540', "New Caledonia"];
     push @data => [ 'NZ', 'NZL', '554', "New Zealand"];
     push @data => [ 'NI', 'NIC', '558', "Nicaragua"];
@@ -430,7 +437,7 @@ sub init_data {
     push @data => [ 'NF', 'NFK', '574', "Norfolk Island"];
     push @data => [ 'MP', 'MNP', '580', "Northern Mariana Islands"];
     push @data => [ 'NO', 'NOR', '578', "Norway"];
-    push @data => [undef, 'PSE', '275', "Occupied Palestinian Territory"];
+    push @data => [ 'PS', 'PSE', '275', "Occupied Palestinian Territory"];
     push @data => [ 'OM', 'OMN', '512', "Oman"];
     push @data => [ 'PK', 'PAK', '586', "Pakistan"];
     push @data => [ 'PW', 'PLW', '585', "Palau"];
@@ -450,9 +457,11 @@ sub init_data {
     push @data => [ 'RE', 'REU', '638', "R\x{e9}union"];
     push @data => [ 'RU', 'RUS', '643', "Russian Federation"];
     push @data => [ 'RW', 'RWA', '646', "Rwanda"];
+    push @data => [ 'BL', undef, undef, "Saint Barthelemy"];
     push @data => [ 'SH', 'SHN', '654', "Saint Helena"];
     push @data => [ 'KN', 'KNA', '659', "Saint Kitts and Nevis"];
     push @data => [ 'LC', 'LCA', '662', "Saint Lucia"];
+    push @data => [ 'MF', undef, undef, "Saint Martin"];
     push @data => [ 'PM', 'SPM', '666', "Saint Pierre and Miquelon"];
     push @data => [ 'VC', 'VCT', '670', "Saint Vincent and the Grenadines"];
     push @data => [ 'WS', 'WSM', '882', "Samoa"];
@@ -460,15 +469,17 @@ sub init_data {
     push @data => [ 'ST', 'STP', '678', "Sao Tome and Principe"];
     push @data => [ 'SA', 'SAU', '682', "Saudi Arabia"];
     push @data => [ 'SN', 'SEN', '686', "Senegal"];
+    push @data => [ 'RS', 'SRB', '688', "Serbia"];
     push @data => [ 'SC', 'SYC', '690', "Seychelles"];
     push @data => [ 'SL', 'SLE', '694', "Sierra Leone"];
     push @data => [ 'SG', 'SGP', '702', "Singapore"];
+    push @data => [ 'SX', 'SXM', '534', "Sint Maarten (Dutch part)"];
     push @data => [ 'SK', 'SVK', '703', "Slovakia"];
     push @data => [ 'SI', 'SVN', '705', "Slovenia"];
     push @data => [ 'SB', 'SLB', '090', "Solomon Islands"];
     push @data => [ 'SO', 'SOM', '706', "Somalia"];
     push @data => [ 'ZA', 'ZAF', '710', "South Africa"];
-    push @data => [ 'GS', undef, undef,
+    push @data => [ 'GS', 'SGS', '239',
                           "South Georgia And The South Sandwich Islands"];
     push @data => [ 'ES', 'ESP', '724', "Spain"];
     push @data => [ 'LK', 'LKA', '144', "Sri Lanka"];
@@ -497,7 +508,7 @@ sub init_data {
     push @data => [ 'GB', 'GBR', '826', "United Kingdom"];
     push @data => [ 'TZ', 'TZA', '834', "United Republic of Tanzania"];
     push @data => [ 'US', 'USA', '840', "United States"];
-    push @data => [ 'UM', undef, undef, "United States Minor Outlying Islands"];
+    push @data => [ 'UM', 'UMI', '581', "United States Minor Outlying Islands"];
     push @data => [ 'VI', 'VIR', '850', "United States Virgin Islands"];
     push @data => [ 'UY', 'URY', '858', "Uruguay"];
     push @data => [ 'UZ', 'UZB', '860', "Uzbekistan"];
@@ -507,7 +518,6 @@ sub init_data {
     push @data => [ 'WF', 'WLF', '876', "Wallis and Futuna Islands"];
     push @data => [ 'EH', 'ESH', '732', "Western Sahara"];
     push @data => [ 'YE', 'YEM', '887', "Yemen"];
-    push @data => [ 'YU', 'YUG', '891', "Yugoslavia"];
     push @data => [ 'ZM', 'ZMB', '894', "Zambia"];
     push @data => [ 'ZW', 'ZWE', '716', "Zimbabwe"];
 
@@ -523,6 +533,7 @@ sub init_data {
                                                                  CNT_F_OLD];
     push @data => [undef, undef, '384', "Ivory Coast",           CNT_F_OLD];
     push @data => [undef, undef, '532', "Netherlands Antilles",  CNT_F_OLD];
+    push @data => [ 'AN', 'ANT', '530', "Netherlands Antilles",  CNT_F_OLD];
     push @data => [undef, undef, '582', "Pacific Islands (Trust Territory)",
                                                                  CNT_F_OLD];
     push @data => [undef, undef, '890',
@@ -531,6 +542,7 @@ sub init_data {
                           "Union of Soviet Socialist Republics", CNT_F_OLD];
     push @data => [undef, undef, '854', "Upper Volta",           CNT_F_OLD];
     push @data => [undef, undef, '886', "Yemen",                 CNT_F_OLD];
+    push @data => [ 'YU', 'YUG', '891', "Yugoslavia",            CNT_F_OLD];
     push @data => [undef, undef, '180', "Zaire",                 CNT_F_OLD];
 
     # Regions
@@ -567,6 +579,10 @@ sub init_data {
 
     my %data;
     foreach my $item (@data) {
+        push @{ $code2 }     =>  $item->[CNT_I_CODE2]   if defined $item->[CNT_I_CODE2];
+        push @{ $code3 }     =>  $item->[CNT_I_CODE3]   if defined $item->[CNT_I_CODE3];
+        push @{ $numcode }   =>  $item->[CNT_I_NUMCODE]   if defined $item->[CNT_I_NUMCODE];
+        push @{ $countries } =>  $item->[CNT_I_COUNTRY];
         foreach my $thingy (@$item [CNT_I_CODE2 .. CNT_I_COUNTRY]) {
             next unless defined $thingy;
             $data {norm $thingy} ||= [@$item [CNT_I_CODE2 .. CNT_I_COUNTRY],

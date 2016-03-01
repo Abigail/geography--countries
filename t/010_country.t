@@ -740,10 +740,10 @@ is scalar country ("NL"),  "Netherlands", "'NL'";
 is scalar country ("NLD"), "Netherlands", "'NLD'";
 is scalar country ("528"), "Netherlands", "'528'";
 
-# Netherlands Antilles
-is scalar country ("AN"),  "Netherlands Antilles", "'AN'";
-is scalar country ("ANT"), "Netherlands Antilles", "'ANT'";
-is scalar country ("530"), "Netherlands Antilles", "'530'";
+# Curaçao
+is scalar country ("CW"),  "Cura\x{e7}ao", "'CW'";
+is scalar country ("CUW"), "Cura\x{e7}ao", "'CUW'";
+is scalar country ("531"), "Cura\x{e7}ao", "'531'";
 
 # Aruba
 is scalar country ("AW"),  "Aruba", "'AW'";
@@ -866,9 +866,9 @@ is scalar country ("GNB"), "Guinea-Bissau", "'GNB'";
 is scalar country ("624"), "Guinea-Bissau", "'624'";
 
 # East Timor
-is scalar country ("TP"),  "East Timor", "'TP'";
-is scalar country ("TMP"), "East Timor", "'TMP'";
-is scalar country ("626"), "East Timor", "'626'";
+is scalar country ("TL"),  "Timor-Leste", "'TL'";
+is scalar country ("TLS"), "Timor-Leste", "'TLS'";
+is scalar country ("626"), "Timor-Leste", "'626'";
 
 # Puerto Rico
 is scalar country ("PR"),  "Puerto Rico", "'PR'";
@@ -1182,10 +1182,10 @@ is scalar country ("YE"),  "Yemen", "'YE'";
 is scalar country ("YEM"), "Yemen", "'YEM'";
 is scalar country ("887"), "Yemen", "'887'";
 
-# Yugoslavia
-is scalar country ("YU"),  "Yugoslavia", "'YU'";
-is scalar country ("YUG"), "Yugoslavia", "'YUG'";
-is scalar country ("891"), "Yugoslavia", "'891'";
+# Serbia
+is scalar country ("RS"),  "Serbia", "'RS'";
+is scalar country ("SRB"), "Serbia", "'SRB'";
+is scalar country ("688"), "Serbia", "'688'";
 
 # Zambia
 is scalar country ("ZM"),  "Zambia", "'ZM'";
