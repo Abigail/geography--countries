@@ -15,43 +15,43 @@ my $FLAG = 1;
 
 # Antarctica
 is_deeply [country ("AQ") ],
-          ["AQ", undef, undef, "Antarctica", $FLAG], "'AQ'";
+          ["AQ", "ATA", "010", "Antarctica", $FLAG], "'AQ'";
 
 # Bouvet Island
 is_deeply [country ("BV") ],
-          ["BV", undef, undef, "Bouvet Island", $FLAG], "'BV'";
+          ["BV", "BVT", "074", "Bouvet Island", $FLAG], "'BV'";
 
 # British Indian Ocean Territory
 is_deeply [country ("IO") ],
-          ["IO", undef, undef, "British Indian Ocean Territory", $FLAG], "'IO'";
+          ["IO", "IOT", "086", "British Indian Ocean Territory", $FLAG], "'IO'";
 
 # Christmas Island
 is_deeply [country ("CX") ],
-          ["CX", undef, undef, "Christmas Island", $FLAG], "'CX'";
+          ["CX", "CXR", "162", "Christmas Island", $FLAG], "'CX'";
 
 # Cocos (keeling) Islands
 is_deeply [country ("CC") ],
-          ["CC", undef, undef, "Cocos (keeling) Islands", $FLAG], "'CC'";
+          ["CC", "CCK", "166", "Cocos (keeling) Islands", $FLAG], "'CC'";
 
 # French Southern Territories
 is_deeply [country ("TF") ],
-          ["TF", undef, undef, "French Southern Territories", $FLAG], "'TF'";
+          ["TF", "ATF", "260", "French Southern Territories", $FLAG], "'TF'";
 
 # Heard Island And Mcdonald Islands
 is_deeply [country ("HM") ],
-          ["HM", undef, undef, "Heard Island And Mcdonald Islands", $FLAG], "'HM'";
+          ["HM", "HMD", "334", "Heard Island And Mcdonald Islands", $FLAG], "'HM'";
 
 # Mayotte
 is_deeply [country ("YT") ],
-          ["YT", undef, undef, "Mayotte", $FLAG], "'YT'";
+          ["YT", "MYT", "175", "Mayotte", $FLAG], "'YT'";
 
 # South Georgia And The South Sandwich Islands
 is_deeply [country ("GS") ],
-          ["GS", undef, undef, "South Georgia And The South Sandwich Islands", $FLAG], "'GS'";
+          ["GS", "SGS", "239", "South Georgia And The South Sandwich Islands", $FLAG], "'GS'";
 
 # United States Minor Outlying Islands
 is_deeply [country ("UM") ],
-          ["UM", undef, undef, "United States Minor Outlying Islands", $FLAG], "'UM'";
+          ["UM", "UMI", "581", "United States Minor Outlying Islands", $FLAG], "'UM'";
 
 # Afghanistan
 is_deeply [country ("AF") ],
@@ -639,9 +639,9 @@ is_deeply [country ("270")],
 
 # Occupied Palestinian Territory
 is_deeply [country ("PSE")],
-          [undef, "PSE", "275", "Occupied Palestinian Territory", $FLAG], "'PSE'";
+          ["PS", "PSE", "275", "Occupied Palestinian Territory", $FLAG], "'PSE'";
 is_deeply [country ("275")],
-          [undef, "PSE", "275", "Occupied Palestinian Territory", $FLAG], "'275'";
+          ["PS", "PSE", "275", "Occupied Palestinian Territory", $FLAG], "'275'";
 
 # Germany
 is_deeply [country ("DE") ],
@@ -1371,13 +1371,13 @@ is_deeply [country ("GNB")],
 is_deeply [country ("624")],
           ["GW", "GNB", "624", "Guinea-Bissau", $FLAG], "'624'";
 
-# East Timor
-is_deeply [country ("TP") ],
-          ["TP", "TMP", "626", "East Timor", $FLAG], "'TP'";
-is_deeply [country ("TMP")],
-          ["TP", "TMP", "626", "East Timor", $FLAG], "'TMP'";
+# Timor-leste
+is_deeply [country ("TL") ],
+          ["TL", "TLS", "626", "Timor-Leste", $FLAG], "'TL'";
+is_deeply [country ("TLS")],
+          ["TL", "TLS", "626", "Timor-Leste", $FLAG], "'TLS'";
 is_deeply [country ("626")],
-          ["TP", "TMP", "626", "East Timor", $FLAG], "'626'";
+          ["TL", "TLS", "626", "Timor-Leste", $FLAG], "'626'";
 
 # Puerto Rico
 is_deeply [country ("PR") ],
@@ -1877,13 +1877,13 @@ is_deeply [country ("YEM")],
 is_deeply [country ("887")],
           ["YE", "YEM", "887", "Yemen", $FLAG], "'887'";
 
-# Yugoslavia
-is_deeply [country ("YU") ],
-          ["YU", "YUG", "891", "Yugoslavia", $FLAG], "'YU'";
-is_deeply [country ("YUG")],
-          ["YU", "YUG", "891", "Yugoslavia", $FLAG], "'YUG'";
+# Serbia and Montenegro
+is_deeply [country ("CS") ],
+          ["CS", "SCG", "891", "Serbia and Montenegro", $FLAG], "'CS'";
+is_deeply [country ("SCG")],
+          ["CS", "SCG", "891", "Serbia and Montenegro", $FLAG], "'SCG'";
 is_deeply [country ("891")],
-          ["YU", "YUG", "891", "Yugoslavia", $FLAG], "'891'";
+          ["CS", "SCG", "891", "Serbia and Montenegro", $FLAG], "'891'";
 
 # Zambia
 is_deeply [country ("ZM") ],

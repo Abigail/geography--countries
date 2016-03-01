@@ -866,9 +866,9 @@ is scalar country ("GNB"), "Guinea-Bissau", "'GNB'";
 is scalar country ("624"), "Guinea-Bissau", "'624'";
 
 # East Timor
-is scalar country ("TP"),  "East Timor", "'TP'";
-is scalar country ("TMP"), "East Timor", "'TMP'";
-is scalar country ("626"), "East Timor", "'626'";
+is scalar country ("TL"),  "Timor-Leste", "'TL'";
+is scalar country ("TLS"), "Timor-Leste", "'TLS'";
+is scalar country ("626"), "Timor-Leste", "'626'";
 
 # Puerto Rico
 is scalar country ("PR"),  "Puerto Rico", "'PR'";
@@ -1182,10 +1182,10 @@ is scalar country ("YE"),  "Yemen", "'YE'";
 is scalar country ("YEM"), "Yemen", "'YEM'";
 is scalar country ("887"), "Yemen", "'887'";
 
-# Yugoslavia
-is scalar country ("YU"),  "Yugoslavia", "'YU'";
-is scalar country ("YUG"), "Yugoslavia", "'YUG'";
-is scalar country ("891"), "Yugoslavia", "'891'";
+# Serbia and Montenegro
+is scalar country ("CS"),  "Serbia and Montenegro", "'CS'";
+is scalar country ("SCG"), "Serbia and Montenegro", "'SCG'";
+is scalar country ("891"), "Serbia and Montenegro", "'891'";
 
 # Zambia
 is scalar country ("ZM"),  "Zambia", "'ZM'";
