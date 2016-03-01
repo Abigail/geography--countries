@@ -1182,10 +1182,10 @@ is scalar country ("YE"),  "Yemen", "'YE'";
 is scalar country ("YEM"), "Yemen", "'YEM'";
 is scalar country ("887"), "Yemen", "'887'";
 
-# Serbia and Montenegro
-is scalar country ("CS"),  "Serbia and Montenegro", "'CS'";
-is scalar country ("SCG"), "Serbia and Montenegro", "'SCG'";
-is scalar country ("891"), "Serbia and Montenegro", "'891'";
+# Serbia
+is scalar country ("RS"),  "Serbia", "'RS'";
+is scalar country ("SRB"), "Serbia", "'SRB'";
+is scalar country ("688"), "Serbia", "'688'";
 
 # Zambia
 is scalar country ("ZM"),  "Zambia", "'ZM'";

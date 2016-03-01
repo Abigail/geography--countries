@@ -42,7 +42,7 @@ printf "%sok %d\n", $list [CNT_I_CODE3]   eq "GBR"
                     ? "" : "not ", ++ $test;
 
 my @codes = code3;
-printf "%sok %d\n", @codes == 245
+printf "%sok %d\n", @codes == 248
                     ? "" : "not ", ++ $test;
 
 eval {my $c = &country (1, 2, 3)};

@@ -1877,13 +1877,13 @@ is_deeply [country ("YEM")],
 is_deeply [country ("887")],
           ["YE", "YEM", "887", "Yemen", $FLAG], "'887'";
 
-# Serbia and Montenegro
-is_deeply [country ("CS") ],
-          ["CS", "SCG", "891", "Serbia and Montenegro", $FLAG], "'CS'";
-is_deeply [country ("SCG")],
-          ["CS", "SCG", "891", "Serbia and Montenegro", $FLAG], "'SCG'";
-is_deeply [country ("891")],
-          ["CS", "SCG", "891", "Serbia and Montenegro", $FLAG], "'891'";
+# Serbia
+is_deeply [country ("RS") ],
+          ["RS", "SRB", "688", "Serbia", $FLAG], "'RS'";
+is_deeply [country ("SRB")],
+          ["RS", "SRB", "688", "Serbia", $FLAG], "'SRB'";
+is_deeply [country ("688")],
+          ["RS", "SRB", "688", "Serbia", $FLAG], "'688'";
 
 # Zambia
 is_deeply [country ("ZM") ],

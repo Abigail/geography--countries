@@ -264,6 +264,7 @@ sub init_data {
     my   @data;
 
     # "Regular" countries.
+    push @data => [ 'AX', 'ALA', '248', "\x{c5}land Islands"];
     push @data => [ 'AF', 'AFG', '004', "Afghanistan"];
     push @data => [ 'AL', 'ALB', '008', "Albania"];
     push @data => [ 'DZ', 'DZA', '012', "Algeria"];
@@ -314,7 +315,6 @@ sub init_data {
     push @data => [ 'CL', 'CHL', '152', "Chile"];
     push @data => [ 'CN', 'CHN', '156', "China"];
     push @data => [ 'CX', 'CXR', '162', "Christmas Island"];
-    push @data => [ 'AX', 'ALA', '248', "Cland Islands"];
     push @data => [ 'CC', 'CCK', '166', "Cocos (keeling) Islands"];
     push @data => [ 'CO', 'COL', '170', "Colombia"];
     push @data => [ 'KM', 'COM', '174', "Comoros"];
@@ -365,6 +365,7 @@ sub init_data {
     push @data => [ 'GP', 'GLP', '312', "Guadeloupe"];
     push @data => [ 'GU', 'GUM', '316', "Guam"];
     push @data => [ 'GT', 'GTM', '320', "Guatemala"];
+    push @data => [ 'GG', 'GGY', '831', "Guersey"];
     push @data => [ 'GN', 'GIN', '324', "Guinea"];
     push @data => [ 'GW', 'GNB', '624', "Guinea-Bissau"];
     push @data => [ 'GY', 'GUY', '328', "Guyana"];
@@ -386,6 +387,7 @@ sub init_data {
     push @data => [ 'IT', 'ITA', '380', "Italy"];
     push @data => [ 'JM', 'JAM', '388', "Jamaica"];
     push @data => [ 'JP', 'JPN', '392', "Japan"];
+    push @data => [ 'JE', 'JEY', '832', "Jersey"];
     push @data => [ 'JO', 'JOR', '400', "Jordan"];
     push @data => [ 'KZ', 'KAZ', '398', "Kazakhstan"];
     push @data => [ 'KE', 'KEN', '404', "Kenya"];
@@ -402,6 +404,7 @@ sub init_data {
     push @data => [ 'LT', 'LTU', '440', "Lithuania"];
     push @data => [ 'LU', 'LUX', '442', "Luxembourg"];
     push @data => [ 'MO', 'MAC', '446', "Macau"];
+    push @data => [ 'MK', undef, undef, "Macedonia"];
     push @data => [ 'MG', 'MDG', '450', "Madagascar"];
     push @data => [ 'MW', 'MWI', '454', "Malawi"];
     push @data => [ 'MY', 'MYS', '458', "Malaysia"];
@@ -419,6 +422,7 @@ sub init_data {
     push @data => [ 'MS', 'MSR', '500', "Montserrat"];
     push @data => [ 'MA', 'MAR', '504', "Morocco"];
     push @data => [ 'MZ', 'MOZ', '508', "Mozambique"];
+    push @data => [ 'ME', 'MNE', '499', "Montenegro"];
     push @data => [ 'MM', 'MMR', '104', "Myanmar"];
     push @data => [ 'NA', 'NAM', '516', "Namibia"];
     push @data => [ 'NR', 'NRU', '520', "Nauru"];
@@ -453,9 +457,11 @@ sub init_data {
     push @data => [ 'RE', 'REU', '638', "R\x{e9}union"];
     push @data => [ 'RU', 'RUS', '643', "Russian Federation"];
     push @data => [ 'RW', 'RWA', '646', "Rwanda"];
+    push @data => [ 'BL', undef, undef, "Saint Barthelemy"];
     push @data => [ 'SH', 'SHN', '654', "Saint Helena"];
     push @data => [ 'KN', 'KNA', '659', "Saint Kitts and Nevis"];
     push @data => [ 'LC', 'LCA', '662', "Saint Lucia"];
+    push @data => [ 'MF', undef, undef, "Saint Martin"];
     push @data => [ 'PM', 'SPM', '666', "Saint Pierre and Miquelon"];
     push @data => [ 'VC', 'VCT', '670', "Saint Vincent and the Grenadines"];
     push @data => [ 'WS', 'WSM', '882', "Samoa"];
@@ -463,7 +469,7 @@ sub init_data {
     push @data => [ 'ST', 'STP', '678', "Sao Tome and Principe"];
     push @data => [ 'SA', 'SAU', '682', "Saudi Arabia"];
     push @data => [ 'SN', 'SEN', '686', "Senegal"];
-    push @data => [ 'CS', 'SCG', '891', "Serbia and Montenegro"];
+    push @data => [ 'RS', 'SRB', '688', "Serbia"];
     push @data => [ 'SC', 'SYC', '690', "Seychelles"];
     push @data => [ 'SL', 'SLE', '694', "Sierra Leone"];
     push @data => [ 'SG', 'SGP', '702', "Singapore"];
