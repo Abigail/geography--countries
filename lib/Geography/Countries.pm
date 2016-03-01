@@ -53,7 +53,7 @@ my %flags   = (
     Old     => CNT_F_OLD,
     Region  => CNT_F_REGION,
 );
-my %info = init_data;
+my %info = init_data(\@code2, \@code3, \@numcode, \@countries);
 
 @code2     = sort @code2;
 @code3     = sort @code3;
@@ -260,6 +260,7 @@ THE SOFTWARE.
 =cut
 
 sub init_data {
+    my ($code2, $code3, $numcode, $countries) = @_;
     my   @data;
 
     # "Regular" countries.
@@ -567,6 +568,10 @@ sub init_data {
 
     my %data;
     foreach my $item (@data) {
+        push @{ $code2 }     =>  $item->[CNT_I_CODE2]   if defined $item->[CNT_I_CODE2];
+        push @{ $code3 }     =>  $item->[CNT_I_CODE3]   if defined $item->[CNT_I_CODE3];
+        push @{ $numcode }   =>  $item->[CNT_I_NUMCODE]   if defined $item->[CNT_I_NUMCODE];
+        push @{ $countries } =>  $item->[CNT_I_COUNTRY];
         foreach my $thingy (@$item [CNT_I_CODE2 .. CNT_I_COUNTRY]) {
             next unless defined $thingy;
             $data {norm $thingy} ||= [@$item [CNT_I_CODE2 .. CNT_I_COUNTRY],
